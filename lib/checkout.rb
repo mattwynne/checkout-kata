@@ -1,9 +1,15 @@
 class Checkout
-  def initialize(price_of_beans)
-    @price_of_beans = price_of_beans
+  def initialize(prices)
+    @prices = prices
+    @total = 0
   end
   
   def total
-    @price_of_beans
+    @total
+  end
+  
+  def buy(product_id)
+    price = @prices[product_id]
+    @total += price
   end
 end
